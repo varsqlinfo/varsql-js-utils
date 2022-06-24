@@ -1,0 +1,22 @@
+
+0. 타입 스크립트 설치.
+npm i -g typescript
+npm i --save-dev ts-loader
+
+
+1. Prettier VSC에서 프리티어 확장을 설치
+
+2. prettier 설치
+npm i prettier
+
+3. 웹팩 설치
+npm i -D webpack webpack-cli webpack-dev-server
+
+4. babel 설치
+npm i --save-dev @babel/core @babel/cli
+npm i --save-dev @babel/preset-env @babel/preset-typescript
+npm i --save-dev babel-loader
+npm i --save-dev @babel/plugin-proposal-class-properties
+
+
+npx --

@@ -18,5 +18,5 @@ npm i --save-dev @babel/preset-env @babel/preset-typescript
 npm i --save-dev babel-loader
 npm i --save-dev @babel/plugin-proposal-class-properties
 
-
-npx --
+5. jest 설치 (테스트 케이스)
+npm i --save-dev jest

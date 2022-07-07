@@ -1,4 +1,4 @@
-import * as utils from "../utils";
+import { trim } from "../utils";
 import { LINE_CHAR } from "../constants";
 import { SplitChecker } from "../SplitChecker";
 import { TextCheckTokenInfo } from "./TextCheckTokenInfo";
@@ -54,9 +54,9 @@ export default class Splitter {
 	let currentEndTokenKey = '';
 	let lineStartCharIdx = 0;
 
-	let overflowFlag = false; 
+	let overflowFlag = false; //찾는 문자 영역을 벋어 났는지 여부
+	let overflowNextSplitChk = false; // 찾는 문자 라인에 쿼리가 있는지 여부
 
-	// 문자 단위로 읽기
 	for (let i = 0; i < sqlLen; i++) {
 		beforeCh1 = c1; // 이전 값 넣기.
 		orginCh = sql.charAt(i);
@@ -111,10 +111,11 @@ export default class Splitter {
 		}
 
 		statement.push(orginCh);
-
+		/*
 		if(/[(),]/.test(c1)){
 			continue; 
 		}
+		*/
 
 		// 공백체크. ( 체크 
 		if(/[\s(]/.test(c1)){
@@ -151,11 +152,22 @@ export default class Splitter {
 			}
 		}
 
-		if(!overflowFlag && (findLine !=-1 && (lineIdx >= findLine && findCharPos <= i-lineStartCharIdx)) ){
-			//console.log('['+command+']', endCheckerInter, 'asdf : ',lineIdx, findLine , findCharPos , i-lineStartCharIdx)
-
+		if(!overflowNextSplitChk && !overflowFlag && (findLine !=-1 && (lineIdx >= findLine && findCharPos <= i-lineStartCharIdx)) ){
 			overflowFlag = true; 
+
 			if(command.trim()=='' && statementList.length > 0){
+
+				let newLineIdx =sql.indexOf(LINE_CHAR, i+1); 
+				if(newLineIdx > -1){ // 라인 끝 체크, 체크 해서 문자가 있으면 다음 query 리턴하게 처리.
+					let lineStr = sql.substring(i+1,newLineIdx);
+					lineStr = trim(lineStr);
+					let firstChar = lineStr.charAt(0);
+					if(lineStr !='' && !/[;/!@#$%^&()+=?\-]/.test(firstChar)){
+						overflowNextSplitChk = true; 
+						continue;
+					}
+				}
+
 				return [statementList[statementList.length -1]];	
 			}
 		}
@@ -170,6 +182,8 @@ export default class Splitter {
 				,endCharPos : i -lineStartCharIdx
 				,statement : statement.join('')
 			};
+
+			console.log(endCheckerInter, sqlSplitInfo)
 
 			if(overflowFlag){
 				return [sqlSplitInfo];	
@@ -186,9 +200,9 @@ export default class Splitter {
 						return [sqlSplitInfo];	
 					}
 				}
-			}else{
-				statementList.push(sqlSplitInfo);
 			}
+
+			statementList.push(sqlSplitInfo);
 			
 			command = '';
 			word == '';

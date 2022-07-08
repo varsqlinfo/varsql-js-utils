@@ -183,7 +183,7 @@ export default class Splitter {
 				,statement : statement.join('')
 			};
 
-			console.log(endCheckerInter, sqlSplitInfo)
+			//console.log(endCheckerInter, sqlSplitInfo)
 
 			if(overflowFlag){
 				return [sqlSplitInfo];	

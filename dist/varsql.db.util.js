@@ -408,8 +408,7 @@ var Splitter = /*#__PURE__*/function () {
             endLine: lineIdx,
             endCharPos: i - lineStartCharIdx,
             statement: statement.join('')
-          };
-          console.log(endCheckerInter, sqlSplitInfo);
+          }; //console.log(endCheckerInter, sqlSplitInfo)
 
           if (overflowFlag) {
             return [sqlSplitInfo];

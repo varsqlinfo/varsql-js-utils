@@ -7,7 +7,6 @@ export default class CreateChecker implements EndCheck{
     this.idx=0; 
   }
   checkEnd(word: string, beforeWord: string, c1: string, beforeCh1: string, i: number, sql: string): boolean {
-    console.log(++this.idx);
     return c1 =='/' || c1 ==';';
   }
 }

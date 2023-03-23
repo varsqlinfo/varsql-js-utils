@@ -94,3 +94,14 @@ ORDER BY
 
 select * from RES_LPL.dbo.CMT_COMN_DTL;
 `;
+
+
+export const PARAM_TEST_SQL = `select TABLE_SCHEMA  "SCHEMA"
+, TABLE_NAME AS "NAME" /* #{bbbb}*/
+, prop.value AS "REMARKS" -- #{aaa}
+from {databaseName}.INFORMATION_SCHEMA.tables tb 
+LEFT JOIN   {databaseName}.SYS.EXTENDED_PROPERTIES prop 
+ON prop.MAJOR_ID = OBJECT_ID(tb.TABLE_CATALOG +'.'+tb.TABLE_SCHEMA +'.'+tb.TABLE_NAME ) AND prop.MINOR_ID= 0 AND prop.class = 1 AND prop.name = 'MS_Description'
+where 1=1 
+and tb.TABLE_TYPE = #{test1}
+and tb.tab = \${aaaa}`

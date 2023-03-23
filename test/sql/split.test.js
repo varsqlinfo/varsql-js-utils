@@ -1,7 +1,7 @@
-import * as VARSQLUtils from '../src/sqlSplitter';
-import {TEST_SQL as testSql} from './testSQL';
+import * as VARSQLUtils from '../../src/sqlSplitter';
+import {TEST_SQL as testSql} from '../testSQL';
 
-import {equalizeWhitespace} from '../src/utils'
+import {equalizeWhitespace} from '../../src/core/utils'
 
 const split = (sql, cfg = {}) => VARSQLUtils.split(sql, { ...cfg});
 

@@ -1,4 +1,4 @@
-import { trim } from "../../../utils";
+import { trim } from "../../utils";
 import { LINE_CHAR } from "../../../constants";
 import { SplitChecker } from "../../../SplitChecker";
 import { TextCheckTokenInfo } from "./TextCheckTokenInfo";

@@ -1,9 +1,9 @@
-import { trim } from "../utils";
-import { LINE_CHAR } from "../constants";
-import { SplitChecker } from "../SplitChecker";
+import { trim } from "../../../utils";
+import { LINE_CHAR } from "../../../constants";
+import { SplitChecker } from "../../../SplitChecker";
 import { TextCheckTokenInfo } from "./TextCheckTokenInfo";
 import { EndCheckTokenInfo } from "./EndCheckTokenInfo";
-import { SplitOptions } from "../splitOptions";
+import { SplitOptions } from "../../../splitOptions";
 import SplitInfo from "./SplitInfo";
 
 

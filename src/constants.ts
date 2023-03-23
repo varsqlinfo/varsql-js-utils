@@ -1,12 +1,12 @@
-import CreateChecker from "./core/create/CreateChecker";
-import CreateFunctionChecker from "./core/create/CreateFunctionChecker";
-import CreateTriggerCheckerr from "./core/create/CreateTriggerCheckerr";
-import CreateProcedureChecker from "./core/create/CreateProcedureChecker";
-import DefaultChecker from "./core/DefaultChecker";
+import CreateChecker from "./core/sql/split/create/CreateChecker";
+import CreateFunctionChecker from "./core/sql/split/create/CreateFunctionChecker";
+import CreateTriggerCheckerr from "./core/sql/split/create/CreateTriggerCheckerr";
+import CreateProcedureChecker from "./core/sql/split/create/CreateProcedureChecker";
+import DefaultChecker from "./core/sql/split/DefaultChecker";
 
-import { TextCheckToken } from "./core/TextCheckTokenInfo";
+import { TextCheckToken } from "./core/sql/split/TextCheckTokenInfo";
 
-import { EndCheckKeyord, EndCheck } from "./core/EndCheckTokenInfo";
+import { EndCheckKeyord, EndCheck } from "./core/sql/split/EndCheckTokenInfo";
 
 // line char
 export const LINE_CHAR = '\n';

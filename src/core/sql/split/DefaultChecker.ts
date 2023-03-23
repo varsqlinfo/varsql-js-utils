@@ -1,4 +1,4 @@
-import { LINE_CHAR } from "../constants";
+import { LINE_CHAR } from "../../../constants";
 import { EndCheck } from "./EndCheckTokenInfo";
 
 // create function check token

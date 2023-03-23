@@ -1,8 +1,8 @@
-import Splitter from "./core/Splitter";
+import Splitter from "./core/sql/split/Splitter";
 
 import { SplitOptions } from "./splitOptions";
 import StandardSplitter from "./db/standard.splitter";
-import SplitInfo from "./core/SplitInfo";
+import SplitInfo from "./core/sql/split/SplitInfo";
 
 let splitters = {
   standard: StandardSplitter,

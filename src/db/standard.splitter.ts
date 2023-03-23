@@ -1,8 +1,8 @@
 import { DEFAULT_TEXT_CHECK_TOKEN, DEFAULT_END_SPLITTER } from "../constants";
-import Splitter from "../core/Splitter";
+import Splitter from "../core/sql/split/Splitter";
 import { SplitChecker } from "../SplitChecker";
-import { TextCheckTokenInfo } from "../core/TextCheckTokenInfo";
-import { EndCheckTokenInfo } from "../core/EndCheckTokenInfo";
+import { TextCheckTokenInfo } from "../core/sql/split/TextCheckTokenInfo";
+import { EndCheckTokenInfo } from "../core/sql/split/EndCheckTokenInfo";
 
 import {  } from "../constants";
 

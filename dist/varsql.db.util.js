@@ -31,15 +31,15 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.DEFAULT_END_SPLITTER = exports.CREATE_END_CHECK_KEYWORD = exports.DEFAULT_TEXT_CHECK_TOKEN = exports.TAB_CHAR = exports.LINE_CHAR = void 0;
 
-var CreateChecker_1 = __importDefault(__webpack_require__(/*! ./core/create/CreateChecker */ "./src/core/create/CreateChecker.ts"));
+var CreateChecker_1 = __importDefault(__webpack_require__(/*! ./core/sql/split/create/CreateChecker */ "./src/core/sql/split/create/CreateChecker.ts"));
 
-var CreateFunctionChecker_1 = __importDefault(__webpack_require__(/*! ./core/create/CreateFunctionChecker */ "./src/core/create/CreateFunctionChecker.ts"));
+var CreateFunctionChecker_1 = __importDefault(__webpack_require__(/*! ./core/sql/split/create/CreateFunctionChecker */ "./src/core/sql/split/create/CreateFunctionChecker.ts"));
 
-var CreateTriggerCheckerr_1 = __importDefault(__webpack_require__(/*! ./core/create/CreateTriggerCheckerr */ "./src/core/create/CreateTriggerCheckerr.ts"));
+var CreateTriggerCheckerr_1 = __importDefault(__webpack_require__(/*! ./core/sql/split/create/CreateTriggerCheckerr */ "./src/core/sql/split/create/CreateTriggerCheckerr.ts"));
 
-var CreateProcedureChecker_1 = __importDefault(__webpack_require__(/*! ./core/create/CreateProcedureChecker */ "./src/core/create/CreateProcedureChecker.ts"));
+var CreateProcedureChecker_1 = __importDefault(__webpack_require__(/*! ./core/sql/split/create/CreateProcedureChecker */ "./src/core/sql/split/create/CreateProcedureChecker.ts"));
 
-var DefaultChecker_1 = __importDefault(__webpack_require__(/*! ./core/DefaultChecker */ "./src/core/DefaultChecker.ts")); // line char
+var DefaultChecker_1 = __importDefault(__webpack_require__(/*! ./core/sql/split/DefaultChecker */ "./src/core/sql/split/DefaultChecker.ts")); // line char
 
 
 exports.LINE_CHAR = '\n'; // tab char
@@ -96,10 +96,10 @@ exports.DEFAULT_END_SPLITTER = {
 
 /***/ }),
 
-/***/ "./src/core/DefaultChecker.ts":
-/*!************************************!*\
-  !*** ./src/core/DefaultChecker.ts ***!
-  \************************************/
+/***/ "./src/core/sql/split/DefaultChecker.ts":
+/*!**********************************************!*\
+  !*** ./src/core/sql/split/DefaultChecker.ts ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -114,7 +114,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var constants_1 = __webpack_require__(/*! ../constants */ "./src/constants.ts"); // create function check token
+var constants_1 = __webpack_require__(/*! ../../../constants */ "./src/constants.ts"); // create function check token
 
 
 var DefaultChecker = /*#__PURE__*/function () {
@@ -159,10 +159,10 @@ exports["default"] = DefaultChecker;
 
 /***/ }),
 
-/***/ "./src/core/EndCheckTokenInfo.ts":
-/*!***************************************!*\
-  !*** ./src/core/EndCheckTokenInfo.ts ***!
-  \***************************************/
+/***/ "./src/core/sql/split/EndCheckTokenInfo.ts":
+/*!*************************************************!*\
+  !*** ./src/core/sql/split/EndCheckTokenInfo.ts ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -213,10 +213,10 @@ exports.EndCheckTokenInfo = EndCheckTokenInfo;
 
 /***/ }),
 
-/***/ "./src/core/Splitter.ts":
-/*!******************************!*\
-  !*** ./src/core/Splitter.ts ***!
-  \******************************/
+/***/ "./src/core/sql/split/Splitter.ts":
+/*!****************************************!*\
+  !*** ./src/core/sql/split/Splitter.ts ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -231,9 +231,9 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var utils_1 = __webpack_require__(/*! ../utils */ "./src/utils.ts");
+var utils_1 = __webpack_require__(/*! ../../../utils */ "./src/utils.ts");
 
-var constants_1 = __webpack_require__(/*! ../constants */ "./src/constants.ts");
+var constants_1 = __webpack_require__(/*! ../../../constants */ "./src/constants.ts");
 
 var Splitter = /*#__PURE__*/function () {
   function Splitter(cfg) {
@@ -447,10 +447,10 @@ exports["default"] = Splitter;
 
 /***/ }),
 
-/***/ "./src/core/TextCheckTokenInfo.ts":
-/*!****************************************!*\
-  !*** ./src/core/TextCheckTokenInfo.ts ***!
-  \****************************************/
+/***/ "./src/core/sql/split/TextCheckTokenInfo.ts":
+/*!**************************************************!*\
+  !*** ./src/core/sql/split/TextCheckTokenInfo.ts ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -498,10 +498,10 @@ exports.TextCheckTokenInfo = TextCheckTokenInfo;
 
 /***/ }),
 
-/***/ "./src/core/create/CreateChecker.ts":
-/*!******************************************!*\
-  !*** ./src/core/create/CreateChecker.ts ***!
-  \******************************************/
+/***/ "./src/core/sql/split/create/CreateChecker.ts":
+/*!****************************************************!*\
+  !*** ./src/core/sql/split/create/CreateChecker.ts ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -542,10 +542,10 @@ exports["default"] = CreateChecker;
 
 /***/ }),
 
-/***/ "./src/core/create/CreateFunctionChecker.ts":
-/*!**************************************************!*\
-  !*** ./src/core/create/CreateFunctionChecker.ts ***!
-  \**************************************************/
+/***/ "./src/core/sql/split/create/CreateFunctionChecker.ts":
+/*!************************************************************!*\
+  !*** ./src/core/sql/split/create/CreateFunctionChecker.ts ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -613,10 +613,10 @@ exports["default"] = CreateFunctionChecker;
 
 /***/ }),
 
-/***/ "./src/core/create/CreateProcedureChecker.ts":
-/*!***************************************************!*\
-  !*** ./src/core/create/CreateProcedureChecker.ts ***!
-  \***************************************************/
+/***/ "./src/core/sql/split/create/CreateProcedureChecker.ts":
+/*!*************************************************************!*\
+  !*** ./src/core/sql/split/create/CreateProcedureChecker.ts ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -684,10 +684,10 @@ exports["default"] = CreateProcedureChecker;
 
 /***/ }),
 
-/***/ "./src/core/create/CreateTriggerCheckerr.ts":
-/*!**************************************************!*\
-  !*** ./src/core/create/CreateTriggerCheckerr.ts ***!
-  \**************************************************/
+/***/ "./src/core/sql/split/create/CreateTriggerCheckerr.ts":
+/*!************************************************************!*\
+  !*** ./src/core/sql/split/create/CreateTriggerCheckerr.ts ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -797,11 +797,11 @@ Object.defineProperty(exports, "__esModule", ({
 
 var constants_1 = __webpack_require__(/*! ../constants */ "./src/constants.ts");
 
-var Splitter_1 = __importDefault(__webpack_require__(/*! ../core/Splitter */ "./src/core/Splitter.ts"));
+var Splitter_1 = __importDefault(__webpack_require__(/*! ../core/sql/split/Splitter */ "./src/core/sql/split/Splitter.ts"));
 
-var TextCheckTokenInfo_1 = __webpack_require__(/*! ../core/TextCheckTokenInfo */ "./src/core/TextCheckTokenInfo.ts");
+var TextCheckTokenInfo_1 = __webpack_require__(/*! ../core/sql/split/TextCheckTokenInfo */ "./src/core/sql/split/TextCheckTokenInfo.ts");
 
-var EndCheckTokenInfo_1 = __webpack_require__(/*! ../core/EndCheckTokenInfo */ "./src/core/EndCheckTokenInfo.ts");
+var EndCheckTokenInfo_1 = __webpack_require__(/*! ../core/sql/split/EndCheckTokenInfo */ "./src/core/sql/split/EndCheckTokenInfo.ts");
 
 var StandardSplitter = /*#__PURE__*/function (_Splitter_1$default) {
   _inherits(StandardSplitter, _Splitter_1$default);

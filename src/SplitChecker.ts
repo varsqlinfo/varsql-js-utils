@@ -1,5 +1,5 @@
-import { TextCheckTokenInfo } from "./core/TextCheckTokenInfo";
-import { EndCheckTokenInfo } from "./core/EndCheckTokenInfo";
+import { TextCheckTokenInfo } from "./core/sql/split/TextCheckTokenInfo";
+import { EndCheckTokenInfo } from "./core/sql/split/EndCheckTokenInfo";
 
 export interface SplitChecker {
   textChecker : TextCheckTokenInfo;

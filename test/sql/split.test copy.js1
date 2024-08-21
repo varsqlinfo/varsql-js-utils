@@ -8,7 +8,7 @@ const split = (sql, cfg = {}) => VARSQLUtils.split(sql, { ...cfg });
 // describe.skip 체크 안할때.
 describe("splitter simple test", () => {
   it("first item test", () => {
-    const result = split(testSql, { findLine: 8, findCharPos: 28 });
+    const result = split(testSql, { findLine: 2, findCharPos: 28 });
     expect(equalizeWhitespace(result[0].statement)).toBe(
       equalizeWhitespace(`select TABLE_SCHEMA  "SCHEMA"
       , TABLE_NAME AS "NAME"
@@ -22,28 +22,28 @@ describe("splitter simple test", () => {
   });
 
   it("last char postion check", () => {
-    const result = split(testSql, { findLine: 9, findCharPos: 31 });
+    const result = split(testSql, { findLine: 9, findCharPos: 2 });
     expect(equalizeWhitespace(result[0].statement)).toBe(
       equalizeWhitespace(`select * from RES_LPL.CMT_EMP; `)
     );
   });
 
   it("first char postion check", () => {
-    const result = split(testSql, { findLine: 13, findCharPos: 1 });
+    const result = split(testSql, { findLine: 12, findCharPos: 0 });
     expect(equalizeWhitespace(result[0].statement)).toBe(
       equalizeWhitespace(`select * from TB_CODE where 1=1;`)
     );
   });
 
   it("case 4", () => {
-    const result = split(testSql, { findLine: 18, findCharPos: 1 });
+    const result = split(testSql, { findLine: 16, findCharPos: 0 });
     expect(equalizeWhitespace(result[0].statement)).toBe(
-      equalizeWhitespace(`select * from TB_CODE `)
+      equalizeWhitespace(`select * from TB_CODE ;`)
     );
   });
 
   it("case 5", () => {
-    const result = split(testSql, { findLine: 21, findCharPos: 1 });
+    const result = split(testSql, { findLine: 19, findCharPos: 2 });
     expect(equalizeWhitespace(result[0].statement)).toBe(
       equalizeWhitespace(
         `select GROUP_ID, GROUP_NAME, ACTV, CREATED_DATE, CREATER_ID from RES_LPL.CMT_EMP_GROUP;`
@@ -52,12 +52,10 @@ describe("splitter simple test", () => {
   });
 
   it("case 6", () => {
-    const result = split(testSql, { findLine: 21, findCharPos: 10 });
+    const result = split(testSql, { findLine: 21, findCharPos: 25 });
 
     expect(equalizeWhitespace(result[0].statement)).toBe(
-      equalizeWhitespace(
-        `select GROUP_ID, GROUP_NAME, ACTV, CREATED_DATE, CREATER_ID from RES_LPL.CMT_EMP_GROUP;`
-      )
+      equalizeWhitespace(`select * from TB_BOOKMARK;`)
     );
   });
 });

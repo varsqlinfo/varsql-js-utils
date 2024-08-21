@@ -12,13 +12,15 @@ select * from RES_PMS.VW_PROJ_FILE_DATA;
 
 select * from TB_CODE where 1=1;
 
-select * from TB_CODE
+select * 
+from TB_CODE
 
-;
+
 
 
 select GROUP_ID, GROUP_NAME, ACTV, CREATED_DATE, CREATER_ID from RES_LPL.CMT_EMP_GROUP;
 
+--10000
 select * from TB_BOOKMARK;
 
 select * from RES_LPL.CMT_COMN_DTL;
@@ -95,7 +97,6 @@ ORDER BY
 select * from RES_LPL.dbo.CMT_COMN_DTL;
 `;
 
-
 export const PARAM_TEST_SQL = `select TABLE_SCHEMA  "SCHEMA"
 , TABLE_NAME AS "NAME" /* #{bbbb}*/
 , prop.value AS "REMARKS" -- #{aaa}
@@ -104,4 +105,4 @@ LEFT JOIN   {databaseName}.SYS.EXTENDED_PROPERTIES prop
 ON prop.MAJOR_ID = OBJECT_ID(tb.TABLE_CATALOG +'.'+tb.TABLE_SCHEMA +'.'+tb.TABLE_NAME ) AND prop.MINOR_ID= 0 AND prop.class = 1 AND prop.name = 'MS_Description'
 where 1=1 
 and tb.TABLE_TYPE = #{test1}
-and tb.tab = \${aaaa}`
+and tb.tab = \${aaaa}`;
